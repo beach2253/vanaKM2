@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-10">
+    <div class="py-12">
     <div class="p-6 bg-backdrop border-b border-backdrop">
 
     <div class="py-12">
@@ -120,7 +120,9 @@
         <div class="py-2 col-span-2">
         Document Name :
         <input maxlength="10" class="bg-backdrop-dark rounded-md" type="text" name="Doc_Name">
-
+        @error('Doc_Name')
+                <span>{{$message}}</span>
+        @enderror
     </div>
                     
     <div class="py-2">

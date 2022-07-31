@@ -37,12 +37,13 @@ class DocumentRequestController extends Controller
     public function create(request $add){
         // dd($add);
         //ตรวจสอบข้อมูล
-        $add->validate(
-            [
-                'file'=>'required'
+        $add->validate([
+                'Doc_Name' => 'required|unique:document_requests|max:10',
+                // 'file'=>'required'
             ],
             [
-                'file'=>'กรุณาเลือกไฟล์ PDF'
+                'Doc_Name' => "กรุณาป้อน"
+                // 'file'=>'กรุณาเลือกไฟล์ PDF'
             ]
         );
 
@@ -67,19 +68,19 @@ class DocumentRequestController extends Controller
 
         
         // //บันทึกข้อมูล 
-        $documents = new document_request;
-        $documents->Doc_Code = $add->DocCode;
-        $documents->Doc_Name = $add->Doc_Name;
-        $documents->User_id = Auth::user()->id;
-        $documents->Doc_Type = $add->type;
-        $documents->Doc_Obj = $add->objective;
-        $documents->Doc_Description = $add->info;
-        $documents->Doc_Life = $add->Year;
-        // dd($add->Doc_Name);
-        $documents->Doc_ver = $docver;
-        $documents->Doc_StartDate = $add->usedate;
-        $documents->Doc_Location = $full_path;
-        $documents->Doc_Status ='1';
+        // $documents = new document_request;
+        // $documents->Doc_Code = $add->DocCode;
+        // $documents->Doc_Name = $add->Doc_Name;
+        // $documents->User_id = Auth::user()->id;
+        // $documents->Doc_Type = $add->type;
+        // $documents->Doc_Obj = $add->objective;
+        // $documents->Doc_Description = $add->info;
+        // $documents->Doc_Life = $add->Year;
+        // // dd($add->Doc_Name);
+        // $documents->Doc_ver = $docver;
+        // $documents->Doc_StartDate = $add->usedate;
+        // $documents->Doc_Location = $full_path;
+        // $documents->Doc_Status ='1';
         // $documents->Doc_Timestamp = $add->date;
         // document_request::count(Doc_Name);
         // //upload PDF
