@@ -24,6 +24,67 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
 
-        \App\Models\User::factory(10)->create();
+        // User
+        \App\Models\User::factory()->create([
+            'name' => 'user',
+            'email' => 'user@test.com',
+            'staff_id'=>'user',
+            'department'=>'test',
+            'department_head'=>'VN433',
+            'user_level'=>'staff',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+        // Advance User
+        \App\Models\User::factory()->create([
+            'name' => 'useradv',
+            'email' => 'useradv@test.com',
+            'staff_id'=>'useradv',
+            'department'=>'test',
+            'department_head'=>'VN433',
+            'user_level'=>'staff',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+        // KM Manager
+        \App\Models\User::factory()->create([
+            'name' => 'managerkm',
+            'email' => 'managerkm@test.com',
+            'staff_id'=>'managerkm',
+            'department'=>'test',
+            'department_head'=>'VN433',
+            'user_level'=>'staff',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+        // Training Manager
+        \App\Models\User::factory()->create([
+            'name' => 'managertr',
+            'email' => 'managertr@test.com',
+            'staff_id'=>'managertr',
+            'department'=>'test',
+            'department_head'=>'VN433',
+            'user_level'=>'staff',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+        // MD
+        \App\Models\User::factory()->create([
+            'name' => 'md',
+            'email' => 'md@test.com',
+            'staff_id'=>'md',
+            'department'=>'test',
+            'department_head'=>'VN433',
+            'user_level'=>'staff',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+        // Admin
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@test.com',
+            'staff_id'=>'admin',
+            'department'=>'test',
+            'department_head'=>'VN433',
+            'user_level'=>'staff',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
+
+        // \App\Models\User::factory(10)->create();
     }
 }

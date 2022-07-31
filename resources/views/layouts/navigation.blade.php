@@ -15,20 +15,86 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(Auth::user()->id==1)
+                    <x-dropdown-nav align="top" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                
+                                <div>Document</div>
 
-                    <x-nav-link :href="route('document')" :active="request()->routeIs('document')">
-                        {{ __('document') }}
-                    </x-nav-link>
+                                <div class="ml-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
 
-                    <x-nav-link :href="route('regisDoc')" :active="request()->routeIs('regisDoc')">
-                        {{ __('regisDoc') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('regisOwn')" :active="request()->routeIs('regisOwn')">
-                        {{ __('regisOwn') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('regisManage')" :active="request()->routeIs('regisManage')">
-                        {{ __('Manage Doc') }}
-                    </x-nav-link>
+                        <x-slot name="content">                        
+                            <x-dropdown-link :href="route('document')">
+                                    {{ __('Document') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('regisDoc')">
+                                    {{ __('Register new Document') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('regisOwn')">
+                                    {{ __('My Registed Document') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('regisManage')">
+                                    {{ __('Registed Document Management') }}
+                            </x-dropdown-link>
+                        </x-slot>
+
+                    </x-dropdown-nav>
+                    @else
+                        <x-nav-link :href="route('document')" :active="request()->routeIs('document')">
+                            {{ __('Document') }}
+                        </x-nav-link>
+                    @endif
+
+                    @if(Auth::user()->id==1)
+                    <x-dropdown-nav align="top" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <div>Training</div>
+
+                                <div class="ml-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">                        
+                            <x-dropdown-link>
+                                    {{ __('Training') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link>
+                                    {{ __('Add new Training Presentation') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link>
+                                    {{ __('My Presentation') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link>
+                                    {{ __('Training Management') }}
+                            </x-dropdown-link>
+                        </x-slot>
+
+                    </x-dropdown-nav>
+                    @else
+                        <x-nav-link>
+                            {{ __('Training') }}
+                        </x-nav-link>
+                    @endif
+            
+
                     
                 </div>
             </div>
@@ -80,6 +146,32 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('document')" :active="request()->routeIs('document')">
+                {{ __('document') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('regisDoc')" :active="request()->routeIs('regisDoc')">
+                {{ __('regisDoc') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('regisOwn')" :active="request()->routeIs('regisOwn')">
+                {{ __('regisOwn') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('regisManage')" :active="request()->routeIs('regisManage')">
+                {{ __('regisManage') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link>
+                {{ __('training') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link>
+                {{ __('add training') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link>
+                {{ __('my training') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link>
+                {{ __('manage training') }}
             </x-responsive-nav-link>
         </div>
 

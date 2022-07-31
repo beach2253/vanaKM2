@@ -20,10 +20,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             
-            $table->string('staff_id');
-            $table->string('department');
-            $table->string('department_head');
-            $table->string('user_level');
+            $table->uuid('staff_id')->unique(); //VNxxx 
+            $table->string('department'); //department name
+            $table->string('department_head'); //hod name list
+            $table->string('user_level'); // staff,super,assi,manager,director,MD
             
             $table->rememberToken();
             $table->timestamps();
