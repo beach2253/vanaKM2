@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-10">
     <div class="p-6 bg-backdrop border-b border-backdrop">
 
     <div class="py-12">
